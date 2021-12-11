@@ -157,7 +157,110 @@
   # 문자열로 취급되어 입력된다는 것 주의
   ```
 
+- 프롬프트 띄워서 입력받기
+
+- ```python
+  >>> number = input("숫자를 입력하세요: ")
+  숫자를 입력하세요: 3
+  >>> print(number)
+  3
+  
+  # input("질문 내용")의 형태로 띄워주기
+  ```
+
 - 
+
+
+
+### print에 대해
+
+- 큰따옴표로 둘러싸인 문자열은 + 연산과 동일
+
+- ```python
+  >>> print("life" "is" "too short") 
+  lifeistoo short
+  >>> print("life"+"is"+"too short") 
+  lifeistoo short
+  ```
+
+- 콤마를 사용하면 문자열 띄어쓰기
+
+- ```python
+  >>> print("life", "is", "too short")
+  life is too short
+  ```
+
+- 한 줄에 결과값 출력하기
+
+- ```python
+  >>> for i in range(10):
+  ...     print(i, end=' ')
+  0 1 2 3 4 5 6 7 8 9
+  
+  # 매개변수 end 사용
+  ```
+
+
+
+
+
+## 파일 읽고 쓰기
+
+
+
+### 파일생성
+
+- 파이썬 내장함수 open을 사용
+
+- 파일 이름과 파일 열기 모드를 입력값으로 받고 결과값으로 파일 객체를 돌려줌
+
+- r : 읽기모드, w : 쓰기모드, a : 추가모드
+
+- ```python
+  f = open("C:/Users/alfls/Python_Study/newfile.txt", 'w')
+  f.close()  # 파일객체 닫는역할, 생략가능
+  ```
+
+
+
+### 쓰기모드
+
+- ```python
+  f = open("C:/Users/alfls/Python_Study/newfile.txt", 'w')
+  for i in range(1, 11):
+      data = "%d번째 줄입니다.\n" % i
+      f.write(data)
+  f.close()
+  ```
+
+
+
+### 내용 추가하기
+
+- 쓰기모드로 열면 내용이 모두 사라짐
+
+- 원래의 내용을 유지하면서 새로운 값만 추가할때 
+
+- ```python
+  f = open("C:/Users/alfls/Python_Study/newfile.txt",'a')
+  for i in range(11, 20):
+      data = "%d번째 줄입니다.\n" % i
+      f.write(data)
+  f.close()
+  ```
+
+- with문을 통해 파일을 열고 닫는것을 자동으로 처리가능
+
+- ```python
+  with open("newfile.txt", "w") as f:
+      f.write("Life is too short, you need python")
+  ```
+
+- 
+
+
+
+
 
 
 

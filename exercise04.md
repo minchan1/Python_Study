@@ -122,6 +122,21 @@
 
 - 이 프로그램은 우리가 예상한 "Life is too short"라는 문장을 출력하지 않는다. 우리가 예상한 값을 출력할 수 있도록 프로그램을 수정해 보자.
 
+- ```python
+  # 파일을 닫지 않으면 데이터가 저장되지 않음
+  # 따라서 f1.close()를 추가해주면 된다
+  
+  f1 = open("test.txt", 'w')
+  f1.write("Life is too short")
+  f1.close()
+  
+  f2 = open("test.txt", 'r')
+  print(f2.read())
+  f2.close()
+  ```
+
+- 
+
 
 
 
@@ -129,6 +144,14 @@
 ## Q6
 
 - 사용자의 입력을 파일(test.txt)에 저장하는 프로그램을 작성해 보자. (단 프로그램을 다시 실행하더라도 기존에 작성한 내용을 유지하고 새로 입력한 내용을 추가해야 한다.)
+
+- ```python
+  f = open("C:/블라블라/test.txt",'a')
+  f.write(input())
+  f.close()
+  ```
+
+- 
 
 
 
