@@ -34,7 +34,7 @@
   a = int(input())
   if not a%2 ==0 :
       print('삐빅 홀수입니다')
-  if a%2==0 :
+  else :
       print('삐빅 짝수입니다')
   ```
 
@@ -109,6 +109,14 @@
   print(a)
   ```
 
+- ```
+  a = [1, 3, 5, 4, 2]
+  a.sort(reverse=True)
+  print(a)
+  ```
+
+- 
+
 
 
 
@@ -123,6 +131,11 @@
   a = ['Life', 'is', 'too', 'short']
   print(a[0],a[1],a[2],a[3])
   
+  ```
+
+- ```
+  a = ['Life', 'is', 'too', 'short']
+  print(" ".join(a))
   ```
 
 - 
@@ -142,6 +155,11 @@
   a = list(a)
   a.append(4)
   print(tuple(a))
+  ```
+
+- ```
+  a = (1,2,3)
+  print(a+(4,))
   ```
 
 - 
@@ -192,7 +210,7 @@
 
 - ```python
   a = {'A':90, 'B':80, 'C':70}
-  print(a.pop(B))
+  print(a.pop('B'))
   80
   ```
 

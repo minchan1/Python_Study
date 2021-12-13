@@ -10,8 +10,22 @@
   n = int(input())
   if n%2 == 0 :
       print('even')
-  if not n%2 == 0 :
+  else :
       print('odd')       
+      
+      # 호출하는 과정이 없는데?????
+  ```
+  
+- ```python
+  k = int(input())
+  def func(n) :     
+      if n%2 == 0 :
+          print('even')
+      else :
+          print('odd')
+  func(k)
+  
+  ## 호출!!
   ```
 
 - 
@@ -35,6 +49,17 @@
   for i in range(n) :
       sum_ += a[i]
   print(sum_/n)
+  ```
+
+- ```
+  a = list(map(int,input().split()))
+  def func(k):
+      n = len(k)
+      sum_ = 0
+      for i in range(n) :
+          sum_ += k[i]
+      print(sum_/n)
+  func(a)
   ```
 
 - 
