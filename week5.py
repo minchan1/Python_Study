@@ -33,3 +33,15 @@ def solution(d, budget):
 
 # 문제 3
 # https://programmers.co.kr/learn/courses/30/lessons/12926
+
+def solution(s, n):
+    s=list(s)
+    for i in range(len(s)):
+        if ord(s[i])==32:
+            pass
+        elif ord(s[i])>=97:
+            s[i] = chr((ord(s[i])-97+n)%26 + 97)
+        elif ord(s[i])<97:
+            s[i] = chr((ord(s[i])-65+n)%26 + 65)
+    a=''.join(s)
+    return(a)
