@@ -20,5 +20,6 @@ def solution(sizes):
 
 
 
+
 # lv2 - 정사각형
 # https://programmers.co.kr/learn/courses/30/lessons/12905?language=python3
