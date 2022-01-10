@@ -18,6 +18,18 @@
 # arr = [4, 4, 4, 3, 3] 이면 [4, 3] 을 return 합니다.
 # 배열 arr에서 연속적으로 나타나는 숫자는 제거하고 남은 수들을 return 하는 solution 함수를 완성해 주세요.
 
+def solution(arr):
+    num = []
+    for i in range(1,len(arr)):
+        if arr[i] == arr[i-1]:
+            num.append(i)
+        else:
+            pass
+    num = num.reverse()
+    for i in num:
+        del arr[i]
+    return arr
+
 
 
 
