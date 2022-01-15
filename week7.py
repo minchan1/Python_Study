@@ -36,7 +36,19 @@ def solution(arr):
     return arr
 
 # 2번 풀이 
-
+def solution(arr):
+    num = arr[0]
+    # for문을 두번 사용하거나 주어진 배열을 계속 바꿔버리면
+    # 연산이 늘어나기 때문에 변수를 사용하기로 함
+    answer = [arr[0]]
+    for i in range(1,len(arr)):
+        if arr[i] != arr[i-1]:
+            num = arr[i]
+            answer.append(num)
+        # 배열에서 숫자가 바뀔때마다 바뀐 숫자로 갱신 및 추가
+        else :
+            pass
+    return answer
 
 
 
