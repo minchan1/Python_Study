@@ -7,8 +7,34 @@
 # number에서 k 개의 수를 제거했을 때 만들 수 있는 수 중 가장 큰 숫자를 
 # 문자열 형태로 return 하도록 solution 함수를 완성하세요.
 
+# 옮긴 숫자들 중 K개의 한하여 왼편에 가장큰 숫자를 배치하는 코드
+def getResult(answer, num, k):
 
+	#answer 리스트 내에 값이 존재하며, 왼편이 작고, K의 여유가 있을경우
+    while (answer) and (int(answer[len(answer)-1]) < num) and (k > 0):
+    	#리스트 맨 뒷값 제거
+        answer.pop()
+        #K갯수 감소 
+        k-=1
+    #현재 숫자를 담는다
+    answer.append(num)
+    return answer,k
 
+def solution(number, k):
+    answer = []
+	#왼편부터 숫자를 하나씩 꺼낸다
+    for num in number:
+        answer,k = getResult(answer,int(num),k
+        
+        
+	#만약 K의 여유가 남았다면, 맨뒤에서 부터뺀다(왼편이 크도록 설계되었으므로)
+    for _ in range(k):
+        answer.pop()
+    result=""
+    #출력용
+    for atom in answer:
+        result+=str(atom)
+    return result
 
 # https://programmers.co.kr/learn/courses/30/lessons/12906
 # 배열 arr가 주어집니다. 배열 arr의 각 원소는 숫자 0부터 9까지로 이루어져 있습니다. 
@@ -37,19 +63,18 @@ def solution(arr):
 
 # 2번 풀이 
 def solution(arr):
-    num = arr[0]
+    # num = arr[0]
     # for문을 두번 사용하거나 주어진 배열을 계속 바꿔버리면
     # 연산이 늘어나기 때문에 변수를 사용하기로 함
     answer = [arr[0]]
     for i in range(1,len(arr)):
         if arr[i] != arr[i-1]:
-            num = arr[i]
-            answer.append(num)
+            # num = arr[i]
+            answer.append(arr[i])
         # 배열에서 숫자가 바뀔때마다 바뀐 숫자로 갱신 및 추가
-        else :
-            pass
     return answer
 
+# 변수를 쓰는 이유를 생각해보자
 
 
 # https://programmers.co.kr/learn/courses/30/lessons/77884
