@@ -24,7 +24,7 @@ def solution(number, k):
     answer = []
 	#왼편부터 숫자를 하나씩 꺼낸다
     for num in number:
-        answer,k = getResult(answer,int(num),k
+        answer,k = getResult(answer,int(num),k)
         
         
 	#만약 K의 여유가 남았다면, 맨뒤에서 부터뺀다(왼편이 크도록 설계되었으므로)
@@ -52,8 +52,6 @@ def solution(arr):
         if arr[i] == arr[i-1]:
             num.append(i)
             # 원소가 중복된 인덱스번호를 알아낸다 
-        else:
-            pass
     num.reverse()
             # 앞에서부터 지우면 인덱스번호가 바뀌어버리므로
             # 뒤에서부터 인덱스 삭제
