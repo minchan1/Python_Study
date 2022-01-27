@@ -1,12 +1,26 @@
 #1. https://programmers.co.kr/learn/courses/30/lessons/92334
 
-id_list = ["muzi", "frodo", "apeach", "neo"]
-report = ["muzi frodo","apeach frodo","frodo neo","muzi neo","apeach muzi"]
-k = 2
-r = {}
-for i in range(len(report)):
-    r += report[i].split(' ')
-print(r)
+
+# 시간초과 나옴
+def solution(id_list, report, k):
+    report_set = set(report)
+    report=list(report_set)
+    # 중복제거
+    a=[]
+    answer=[0]*len(id_list) 
+    for i in report:
+        a.append(i.split(' ').pop())
+        # 신고당한 대상만 분리
+        # 신고 한 사람??? <--
+    b= [i for i in id_list if a.count(i)>=k]
+    # 신고 당한 횟수 k이상인 사람 고르기
+    for i in range(len(id_list)):
+        for j in b:
+            if f'{id_list[i]} {j}' in report:
+                answer[i] += 1
+    # 이 부분의 연산 줄여야함
+    return(answer)
+
 
 #2. https://programmers.co.kr/learn/courses/30/lessons/12921
 
