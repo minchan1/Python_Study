@@ -1,44 +1,28 @@
-import itertools
 
+def solution(str1, str2):
+    # 전처리
+    # 두글자씩 끊고, 알파벳으로만 구성된 원소만 남긴다.
+    temp1=[]
+    temp2=[]
+    for i in range(len(list(str1))-1):
+        temp1.append(list(str1)[i]+list(str1)[i+1])
+    for i in range(len(list(str2))-1):
+        temp2.append(list(str2)[i]+list(str2)[i+1])
+    li1 = [i.lower() for i in temp1 if i.isalpha()==True]
+    li2 = [i.lower() for i in temp2 if i.isalpha()==True]
 
-# number = "4177252841"
-# k=4
-# ma = 0
-# nums = list(number)
-# for i in range(len(nums)):
-#     nums[i] = int(nums[i])
-# ans = [0]*(len(nums)-k)
-# # 전처리
+    # 합집합과 교집합을 구한다
+    inter=[]
+    for i in li1:
+        if i in li2:
+            inter.append(i)
+            li2.remove(i)
+    union = li1 + li2
 
-# for i in range(k):
-#     if nums[i] > ma:
-#         ma = nums[i]
-# ans[0] = ma
-
-# print(ans)
-
-moves = [1,5,3,5,1,2,1,4]
-board = [[0,0,0,0,0],[0,0,1,0,3],[0,2,5,0,1],[4,2,4,4,2],[3,5,1,3,1]]
-basket = []
-count = 0
-
-answer = list(map(list, zip(*board)))
-print(answer)
-
-list = [[] for i in range(len(board))]
-for i in range(len(board)):
-    for j in range(len(board)):
-        if board[j][i] !=0:
-            list[i].append(board[j][i])
-# for i in moves:
-#     if len(list[i-1])!=0 and len(basket)==0:
-#         basket.append(list[i-1].pop(0))
-#     elif len(list[i-1])!=0 and len(basket)!=0:
-#         if list[i-1][0] == basket[-1]:
-#             del basket[-1]
-#             del list[i-1][0]
-#             count += 2
-#         else:
-#             basket.append(list[i-1].pop(0))
-
-print(list)
+    # 유사도 = 교집합 원소수 / 합집합 원소수
+    # 교집합이 공집합인 경우 처리
+    if union:
+        ans = int((len(inter)/len(union))*65536)
+    else:
+        ans = 65536
+    return ans

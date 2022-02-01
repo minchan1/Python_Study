@@ -46,7 +46,7 @@ def solution(n, arr1, arr2):
         arr2[i] = bin(arr2[i])[2:]
         if len(arr2[i])!=n:
             while len(arr2[i])!=n:
-                arr2[i] = '0' + arr2[i]
+                arr2[i] = '0' + arr2[i]   # -> 반복되는 부분을 <<함수>>로 빼보는 연습
 
     for i in range(n):
         for j in range(n):
